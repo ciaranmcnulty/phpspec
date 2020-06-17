@@ -46,14 +46,14 @@ class IndexedServiceContainerSpec extends ObjectBehavior
 
     function it_returns_services_which_are_set_using_tags($service)
     {
-        $obj = new \StdClass();
+        $obj = new \stdClass();
         $this->set('some_service', $obj, ['some_tag']);
         $this->getByTag('some_tag')->shouldReturn([$obj]);
     }
 
     function it_returns_services_which_are_defined_using_tags()
     {
-        $obj = new \StdClass();
+        $obj = new \stdClass();
         $this->define('some_service', function () use ($obj) { return $obj; }, ['some_tag']);
         $this->getByTag('some_tag')->shouldReturn([$obj]);
     }

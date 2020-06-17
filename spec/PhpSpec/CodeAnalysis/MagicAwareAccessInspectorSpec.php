@@ -34,44 +34,44 @@ class MagicAwareAccessInspectorSpec extends ObjectBehavior
 
     function it_should_not_detect_a_getter_if_there_is_no_magic_getter_and_wrapped_inspector_finds_none(AccessInspector $accessInspector)
     {
-        $accessInspector->isPropertyReadable(new \StdClass(), 'foo')->willReturn(false);
+        $accessInspector->isPropertyReadable(new \stdClass(), 'foo')->willReturn(false);
 
-        $this->isPropertyReadable(new \StdClass(), 'foo')->shouldReturn(false);
+        $this->isPropertyReadable(new \stdClass(), 'foo')->shouldReturn(false);
     }
 
     function it_should_detect_a_getter_if_there_is_no_magic_getter_but_wrapped_inspector_finds_one(AccessInspector $accessInspector)
     {
-        $accessInspector->isPropertyReadable(new \StdClass(), 'foo')->willReturn(true);
+        $accessInspector->isPropertyReadable(new \stdClass(), 'foo')->willReturn(true);
 
-        $this->isPropertyReadable(new \StdClass(), 'foo')->shouldReturn(true);
+        $this->isPropertyReadable(new \stdClass(), 'foo')->shouldReturn(true);
     }
 
     function it_should_not_detect_a_setter_if_there_is_no_magic_setter_and_wrapped_inspector_finds_none(AccessInspector $accessInspector)
     {
-        $accessInspector->isPropertyWritable(new \StdClass(), 'foo')->willReturn(false);
+        $accessInspector->isPropertyWritable(new \stdClass(), 'foo')->willReturn(false);
 
-        $this->isPropertyWritable(new \StdClass(), 'foo')->shouldReturn(false);
+        $this->isPropertyWritable(new \stdClass(), 'foo')->shouldReturn(false);
     }
 
     function it_should_detect_a_setter_if_there_is_no_magic_setter_but_wrapped_inspector_finds_one(AccessInspector $accessInspector)
     {
-        $accessInspector->isPropertyWritable(new \StdClass(), 'foo')->willReturn(true);
+        $accessInspector->isPropertyWritable(new \stdClass(), 'foo')->willReturn(true);
 
-        $this->isPropertyWritable(new \StdClass(), 'foo')->shouldReturn(true);
+        $this->isPropertyWritable(new \stdClass(), 'foo')->shouldReturn(true);
     }
 
     function it_should_detect_a_method_if_there_is_no_magic_caller_and_wrapped_inspector_finds_none(AccessInspector $accessInspector)
     {
-        $accessInspector->isMethodCallable(new \StdClass(), 'foo')->willReturn(false);
+        $accessInspector->isMethodCallable(new \stdClass(), 'foo')->willReturn(false);
 
-        $this->isMethodCallable(new \StdClass(), 'foo')->shouldReturn(false);
+        $this->isMethodCallable(new \stdClass(), 'foo')->shouldReturn(false);
     }
 
     function it_should_detect_a_method_if_there_is_no_magic_caller_but_wrapped_inspector_finds_one(AccessInspector $accessInspector)
     {
-        $accessInspector->isMethodCallable(new \StdClass(), 'foo')->willReturn(true);
+        $accessInspector->isMethodCallable(new \stdClass(), 'foo')->willReturn(true);
 
-        $this->isMethodCallable(new \StdClass(), 'foo')->shouldReturn(true);
+        $this->isMethodCallable(new \stdClass(), 'foo')->shouldReturn(true);
     }
 }
 

@@ -219,7 +219,7 @@ class MethodReturnedNullListenerSpec extends ObjectBehavior
         $io->askConfirmation(Argument::any())->willReturn(true);
         $resourceManager->createResource(Argument::any())->willReturn($resource);
 
-        $methodCallEvent->getSubject()->willReturn(new \StdClass());
+        $methodCallEvent->getSubject()->willReturn(new \stdClass());
         $methodCallEvent->getMethod()->willReturn('myMethod');
 
         $this->afterMethodCall($methodCallEvent);

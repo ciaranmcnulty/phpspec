@@ -26,7 +26,7 @@ class ObjectEngineSpec extends ObjectBehavior
 
     function it_only_supports_objects()
     {
-        $this->supports(new \StdClass(), new \StdClass())->shouldReturn(true);
+        $this->supports(new \stdClass(), new \stdClass())->shouldReturn(true);
     }
 
     function it_converts_objects_to_string_and_diffs_the_result(Exporter $exporter, StringEngine $stringDiffer)
