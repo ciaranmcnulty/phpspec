@@ -7,7 +7,16 @@ use Isolated\Symfony\Component\Finder\Finder;
 return [
     'whitelist' => [
         'PhpSpec\\*',
-        'spec\\PhpSpec\\*',
+
+        // Below only needed to let internal specs run
+        'spec\\*',
+        'Foo\\*',
+        'Bar\\*',
+        'Baz\\*',
+        'Boz\\*',
+        'Biz\\*',
+        'Acme\\*',
+        'App\\*'
     ],
     'finders' => [
         Finder::create()->files()->in('src'),
