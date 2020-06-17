@@ -3,4 +3,5 @@
 behat.yml
 vendor
 composer.lock
+build
 

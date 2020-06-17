@@ -3,7 +3,9 @@
 
 (function ($version) {
 
-    if (is_file($autoload = getcwd() . '/vendor/autoload.php')) {
+    if (is_file($autoload = getcwd() . '/vendor/scoper-autoload.php')) {
+        require $autoload;
+    } elseif (is_file($autoload = getcwd() . '/vendor/autoload.php')) {
         require $autoload;
     } elseif (is_file($autoload = getcwd() . '/../../autoload.php')) {
         require $autoload;
