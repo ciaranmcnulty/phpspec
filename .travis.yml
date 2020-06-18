@@ -26,9 +26,10 @@ before_install:
   - phpenv config-rm xdebug.ini || true
 
 install:
+  - make ./composer.phar
   - export COMPOSER_ROOT_VERSION=dev-master
-  - if [ "$DEPENDENCIES" == "dev" ]; then composer config minimum-stability dev; fi;
-  - composer update $COMPOSER_FLAGS
+  - if [ "$DEPENDENCIES" == "dev" ]; then ./composer.phar config minimum-stability dev; fi;
+  - ./composer.phar update $COMPOSER_FLAGS
 
 script:
    - bin/phpspec run --format=dot
