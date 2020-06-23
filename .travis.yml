@@ -18,6 +18,18 @@ matrix:
     - php: 7.3
       env: DEPENDENCIES='dev'
     - php: 7.4
+    - php: 7.4
+      env: SYMFONY_VERSION='~4.1.0'
+    - php: 7.4
+      env: SYMFONY_VERSION='~4.2.0'
+    - php: 7.4
+      env: SYMFONY_VERSION='~4.3.0'
+    - php: 7.4
+      env: SYMFONY_VERSION='~4.4.0'
+    - php: 7.4
+      env: SYMFONY_VERSION='~5.0.0'
+    - php: 7.4
+      env: SYMFONY_VERSION='~5.1.0'
   allow_failures:
     - env: DEPENDENCIES='dev'
   fast_finish: true
@@ -28,6 +40,7 @@ before_install:
 install:
   - export COMPOSER_ROOT_VERSION=dev-master
   - if [ "$DEPENDENCIES" == "dev" ]; then composer config minimum-stability dev; fi;
+  - if [ "$SYMFONY_VERSION" != "" ]; then composer require --no-update "symfony/symfony:${SYMFONY_VERSION}"; fi
   - composer update $COMPOSER_FLAGS
 
 script:
